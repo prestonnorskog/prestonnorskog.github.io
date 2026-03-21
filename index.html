@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Preston's E-Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="rainbow-line"></div>
+
+<header>
+  <div class="label">BAS IT · CS · Spring 2026</div>
+  <h1>Preston's E-Portfolio</h1>
+  <p>Hey! I'm a BAS IT student. This is a collection of projects I've worked on throughout my BAS and AAS program and on my own time.</p>
+</header>
+1
+<nav>
+  <a href="#frontend">Front-End</a>
+  <a href="#backend">Back-End</a>
+  <a href="#webdev">Web Dev / Scrum</a>
+  <a href="#databases">Databases</a>
+  <a href="#networks">Networks</a>
+  <a href="#itmanagement">IT Management</a>
+</nav>
+
+<main>
+  <div class="project" id="frontend">
+    <div class="project-header">
+      <div class="project-title">Local File Manager</div>
+      <span class="badge">Front-End Programming</span>
+    </div>
+    <div class="tech-stack">
+      <span class="tech">HTML</span><span class="tech">CSS</span><span class="tech">JavaScript</span><span class="tech">Python</span><span class="tech">PHP</span>
+    </div>
+    <p>A file manager that runs in the browser, served from a local Python server. You can browse and view files through a web UI without needing any real hosting setup. The page refreshes itself when files change on the back end.</p>
+    <div class="sub-label">How it helped me</div>
+    <p>This one taught me a lot about getting Python and PHP to work together, and how serving files locally actually works under the hood. I learned more about HTTP requests and file I/O than I expected going in.</p>
+    <div class="sub-label">Security</div>
+    <div class="security-note">The server logs client IP addresses on each request, providing a basic audit trail of file system access. Future improvements would include input sanitization and access authentication.</div>
+    <a class="repo-link" href="https://github.com/CPlusPlusNewb/websitemaker_python" target="_blank">websitemaker_python</a>
+    <img class="project-img" src="image_2026-03-14_194400499.png" alt="File Manager screenshot" />
+  </div>
+
+  <div class="project" id="backend">
+    <div class="project-header">
+      <div class="project-title">Python Auto-Web-Host <span class="sub">Personal Project</span></div>
+      <span class="badge green">Back-End Programming</span>
+    </div>
+    <div class="tech-stack">
+      <span class="tech">Python</span>
+    </div>
+    <p>A Python script I made that, if there's no <code>index.html</code> in the current folder, automatically creates <code>index.html</code>, <code>style.css</code>, and <code>scripts.js</code> for you. No templates, no setup, just run it and go.</p>
+    <div class="sub-label">How it helped me</div>
+    <p>Having to generate valid HTML/CSS/JS from scratch in Python made me really think about how those files are structured. It was a good exercise in file I/O and automation.</p>
+    <div class="sub-label">Security</div>
+    <div class="security-note">Exception handling is used to avoid overwriting existing files, preventing accidental data loss when run in any directory.</div>
+    <a class="repo-link" href="https://github.com/CPlusPlusNewb/websitemaker_python" target="_blank">websitemaker_python</a>
+    <img class="project-img" src="image_2026-03-14_193843786.png" alt="Auto-Web-Host screenshot" />
+  </div>
+
+  <div class="project" id="webdev">
+    <div class="project-header">
+      <div class="project-title">Social Media Messageboard <span class="sub">Scrum Team Project</span></div>
+      <span class="badge amber">Web Development</span>
+    </div>
+    <div class="tech-stack">
+      <span class="tech">HTML</span><span class="tech">CSS</span><span class="tech">JavaScript</span><span class="tech">Flat-file DB</span>
+    </div>
+    <p>A messageboard website built as a team Scrum project. I handled the <code>style.css</code>, set up the file structure on GitLab, and wrote the <strong>feed function</strong> that reads from the database file and builds the post feed dynamically.</p>
+    <div class="sub-label">How it helped me</div>
+    <p>Working in a real team with Scrum was different from anything I'd done before. I got comfortable trusting teammates to handle their parts, and I learned a lot about how splitting up a project actually works in practice.</p>
+    <div class="sub-label">Scrum Reflections</div>
+    <p>Stand-ups were actually really useful for catching problems early. The hardest parts were merge conflicts when multiple people touched the same files, and we definitely overscoped a couple Sprints.</p>
+    <div class="sub-label">Security</div>
+    <div class="security-note">The feed function validates that database entries exist and are non-empty before rendering, preventing blank or broken post elements from appearing in the UI.</div>
+    <a class="repo-link" href="https://gitlab.com/cs411-winter2026/socialmedia-messageboard" target="_blank">cs411-winter2026/socialmedia-messageboard</a>
+  </div>
+
+  <div class="project" id="databases">
+    <div class="project-header">
+      <div class="project-title">🗄️ Relational Databases — SQL Assignments</div>
+      <span class="badge">Relational Databases</span>
+    </div>
+    <div class="tech-stack">
+      <span class="tech">MySQL</span><span class="tech">SQL</span>
+    </div>
+    <p>A couple of database assignments where I designed tables, wrote queries, and worked with real relational data. The files are in the <code>databases/</code> folder of this repo.</p>
+    <div class="sub-label">Assignment 1 — Customer & Order Database</div>
+    <p>Built a small database called <code>norskog</code> with a <code>customer</code> table and an <code>order</code> table linked by a foreign key on <code>customerid</code>. Inserted sample records and wrote SELECT queries to verify the data.</p>
+    <div class="sub-label">Assignment 2 — Vacation Rental Queries</div>
+    <p>Wrote queries against a vacation rental database with guests, properties, and reservations. Used a JOIN between the reservations and properties tables to calculate cost-per-person per stay, and ran aggregate functions to find min, max, and average nightly rates. Also did an UPDATE on a guest record and created a backup table using CREATE TABLE AS SELECT.</p>
+    <div class="sub-label">Security</div>
+    <div class="security-note">The cost-per-person query includes a WHERE clause guarding against division by zero when the people count is 0. Primary keys and NOT NULL constraints on all tables enforce data integrity at the schema level.</div>
+    <a class="repo-link" href="databases/idkman-1.sql" target="_blank">Norskog Database</a>
+    <a class="repo-link" href="databases/idkman2.sql" target="_blank">Vacation Rental Queries</a>
+  </div>
+
+  <div class="project" id="networks">
+    <div class="project-header">
+      <div class="project-title">Networks & Security — Home Network & Pi-hole Setup</div>
+      <span class="badge">Networks & Security</span>
+    </div>
+    <div class="tech-stack">
+      <span class="tech">Raspberry Pi</span><span class="tech">Pi-hole</span><span class="tech">DNS</span><span class="tech">Linux</span>
+    </div>
+    <p>Outside of class I've configured my own home network and set up a Raspberry Pi 3+ running Pi-hole as a network-wide DNS-based ad blocker. Every device on the network routes DNS requests through the Pi, which filters out known ad and tracking domains before they ever reach a device.</p>
+    <div class="sub-label">Whats cool about this?</div>
+    <p>I'm able to provide my apartment roomates with a ad-free streaming network without having to pay premiums for the same thing</p>
+    <div class="sub-label">How it helped me</div>
+    <p>Setting this up taught me a lot about how DNS actually works, how routers handle traffic, and how something as simple as blocking at the DNS level can have network-wide effects. It also got me comfortable working with Linux on a headless device over SSH.</p>
+    <div class="sub-label">Security</div>
+    <div class="security-note">Pi-hole blocks known malicious and tracking domains at the DNS layer, reducing the attack surface across every device on the network without needing software installed on each one. I also configured the router to only allow the Pi as the DNS server, preventing devices from bypassing it.</div>
+</div>
+
+  <div class="project" id="itmanagement">
+    <div class="project-header">
+      <div class="project-title">IT Management / Scrum — Social Media Messageboard</div>
+      <span class="badge">IT Management</span>
+    </div>
+    <div class="tech-stack">
+      <span class="tech">Scrum</span><span class="tech">GitLab</span><span class="tech">Agile</span>
+    </div>
+    <p>Same project as above, but this covers the process side of it rather than the code. Our team ran the messageboard project using Scrum — we had defined roles, ran Sprints, and held stand-ups throughout development.</p>
+    <div class="sub-label">How the team was run</div>
+    <p>The team was ran by splitting each person into teams for seperate tasks each sprint to break down the work into bite sized chunks along with having multiple personalitys on one part of the project</p>
+    <div class="sub-label">What went wrong</div>
+    <p>finding time to talk about the project became a hassle</p>
+    <div class="sub-label">What I'd do differently</div>
+    <p>I would try and communicate better and maybe do something more on my part to keepm track of what i was supposed to be doing and when and not get side tracked by other class's homework</p>
+    <a class="repo-link" href="https://gitlab.com/cs411-winter2026/socialmedia-messageboard" target="_blank">cs411-winter2026/socialmedia-messageboard</a>
+  </div>
+
+  <div class="outcomes">
+    <h2>What I've learned so far</h2>
+    <ul>
+      <li>Building web UIs and making them actually work</li>
+      <li>Running local servers and understanding how they work</li>
+      <li>Working in a team using Scrum/Agile</li>
+      <li>File I/O, automation, and basic security practices</li>
+    </ul>
+  </div>
+
+</main>
+
+<footer>Last updated: March 2026 · prestonnorskog.github.io</footer>
+
+</body>
+</html>
