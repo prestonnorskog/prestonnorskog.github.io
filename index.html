@@ -16,7 +16,7 @@
   <h1>Preston's E-Portfolio</h1>
   <p>Hey! I'm a BAS IT student. This is a collection of projects I've worked on throughout my BAS and AAS program and on my own time.</p>
 </header>
-1
+
 <nav>
   <a href="#frontend">Front-End</a>
   <a href="#backend">Back-End</a>
@@ -40,7 +40,7 @@
     <p>This one taught me a lot about getting Python and PHP to work together, and how serving files locally actually works under the hood. I learned more about HTTP requests and file I/O than I expected going in.</p>
     <div class="sub-label">Security</div>
     <div class="security-note">The server logs client IP addresses on each request, providing a basic audit trail of file system access. Future improvements would include input sanitization and access authentication.</div>
-    <a class="repo-link" href="https://github.com/CPlusPlusNewb/websitemaker_python" target="_blank">websitemaker_python</a>
+    <a class="repo-link" href="https://github.com/prestonnorskog/python_website_maker" target="_blank">python_website_maker</a>
     <img class="project-img" src="image_2026-03-14_194400499.png" alt="File Manager screenshot" />
   </div>
 
@@ -57,7 +57,7 @@
     <p>Having to generate valid HTML/CSS/JS from scratch in Python made me really think about how those files are structured. It was a good exercise in file I/O and automation.</p>
     <div class="sub-label">Security</div>
     <div class="security-note">Exception handling is used to avoid overwriting existing files, preventing accidental data loss when run in any directory.</div>
-    <a class="repo-link" href="https://github.com/CPlusPlusNewb/websitemaker_python" target="_blank">websitemaker_python</a>
+    <a class="repo-link" href="https://github.com/prestonnorskog/python_website_maker" target="_blank">python_website_maker</a>
     <img class="project-img" src="image_2026-03-14_193843786.png" alt="Auto-Web-Host screenshot" />
   </div>
 
@@ -113,7 +113,7 @@
     <p>Setting this up taught me a lot about how DNS actually works, how routers handle traffic, and how something as simple as blocking at the DNS level can have network-wide effects. It also got me comfortable working with Linux on a headless device over SSH.</p>
     <div class="sub-label">Security</div>
     <div class="security-note">Pi-hole blocks known malicious and tracking domains at the DNS layer, reducing the attack surface across every device on the network without needing software installed on each one. I also configured the router to only allow the Pi as the DNS server, preventing devices from bypassing it.</div>
-</div>
+  </div>
 
   <div class="project" id="itmanagement">
     <div class="project-header">
@@ -133,6 +133,38 @@
     <a class="repo-link" href="https://gitlab.com/cs411-winter2026/socialmedia-messageboard" target="_blank">cs411-winter2026/socialmedia-messageboard</a>
   </div>
 
+  <div class="project">
+    <div class="project-header">
+      <div class="project-title">AItal — Tarkov Intel Chatbot <span class="sub">Personal Project</span></div>
+      <span class="badge green">Back-End Programming</span>
+    </div>
+    <div class="tech-stack">
+      <span class="tech">Python</span><span class="tech">Gradio</span><span class="tech">Groq API</span><span class="tech">LLM</span><span class="tech">BeautifulSoup</span>
+    </div>
+    <p>An AI chatbot scoped entirely to Escape from Tarkov — it answers questions about ammo, quests, maps, bosses, traders, and loadouts, and refuses anything off-topic. Powered by llama-3.3-70b via Groq, with a custom terminal-themed Gradio UI.</p>
+    <div class="sub-label">How it helped me</div>
+    <p>This project got me into working with LLM APIs and prompt engineering for the first time. I learned how to ground an AI response in live data by scraping the Tarkov wiki directly for ammo tables, and how to build guardrails to keep the model on-topic using both keyword filtering and output validation.</p>
+    <div class="sub-label">Security</div>
+    <div class="security-note">Input and output guardrails filter off-topic queries before they reach the model and sanitize responses before display. API keys are loaded from environment variables and never hardcoded.</div>
+    <a class="repo-link" href="https://github.com/prestonnorskog/tarkovbot" target="_blank">tarkovbot</a>
+  </div>
+
+  <div class="project">
+    <div class="project-header">
+      <div class="project-title">Class Manager — Student Schedule Web App <span class="sub">Personal Project</span></div>
+      <span class="badge green">Back-End Programming</span>
+    </div>
+    <div class="tech-stack">
+      <span class="tech">PHP</span><span class="tech">MySQL</span><span class="tech">HTML</span><span class="tech">CSS</span>
+    </div>
+    <p>A full-stack PHP web app for managing student course schedules. Students can view their schedule by term, browse the course catalog, and get suggested revised schedules if they've missed a class. Advisors can manage all students, update enrollment statuses, and add courses on their behalf.</p>
+    <div class="sub-label">How it helped me</div>
+    <p>This was my first time building a full multi-role web app from scratch with no framework. I got a lot of hands-on experience with session management, relational database design, and how to structure PHP across multiple pages. Building the prerequisite enforcement and auto-rescheduling logic was the most challenging and rewarding part.</p>
+    <div class="sub-label">Security</div>
+    <div class="security-note">Passwords are hashed with bcrypt. Sessions are used for all authentication and role checks. The app uses <code>real_escape_string</code> on user input, with prepared statements as a planned improvement. File uploads are validated by MIME type and capped at 2MB.</div>
+    <a class="repo-link" href="https://github.com/prestonnorskog/classmanager" target="_blank">classmanager</a>
+  </div>
+
   <div class="outcomes">
     <h2>What I've learned so far</h2>
     <ul>
@@ -140,12 +172,14 @@
       <li>Running local servers and understanding how they work</li>
       <li>Working in a team using Scrum/Agile</li>
       <li>File I/O, automation, and basic security practices</li>
+      <li>Working with LLM APIs, prompt engineering, and AI guardrails</li>
+      <li>Full-stack PHP development with MySQL and role-based access control</li>
     </ul>
   </div>
 
 </main>
 
-<footer>Last updated: March 2026 · prestonnorskog.github.io</footer>
+<footer>Last updated: June 2026 · prestonnorskog.github.io</footer>
 
 </body>
 </html>
